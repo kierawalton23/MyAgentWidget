@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+  <script type="text/javascript" src="./src/bootstrap.min.js"></script>
+  <script type="text/javascript" src="InitSDK.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="notify.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"> </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div>
+    <label id="alert-label">Log:</label>
+    <textarea rows="1" id="alert" class="message-area" readonly></textarea>
+  </div>
+  <div id="mywidget">
+
+    <form class="well form-search" id="search-by-title-form" onsubmit="return false;">
+      <fieldset>
+          <legend>Search FILM</legend>
+      </fieldset>
+      <div>
+          <label class="control-label" for="t">Title:</label>
+          <input type="text" id="t" name="t" class="input-small">
+          <br>
+          <label class="control-label" for="y">Year:</label>
+          <input type="text" id="y" name="y" class="input-small" style="width: 100px;">
+          <br>
+          <label class="control-label">Plot:</label>
+          <select name="plot" style="width: 100px;">
+              <option value="" selected="">Short</option>
+              <option value="full">Full</option>
+          </select>
+          <br>
+          <label class="control-label" style="display: none;">Response:</label>
+          <select name="r" style="width: 100px; display: none;">
+              <option value="" selected="">JSON</option>
+          </select>
+          <button id="search-by-title-button" type="button" class="btn-sm btn-primary">Search</button>
+          <button id="search-by-title-reset" type="reset" class="btn-sm">Reset</button>
+      </div>
+      <div class="hide" id="search-by-title-request" style="display: none;">
+          <br>
+          <p>Request:</p>
+          <pre class="alert alert-box"><a href="javascript:;" target="_blank"></a></pre>
+      </div>
+      <div id="search-by-title-progress" class="hide progress progress-info progress-striped active">
+          <div class="progress-bar" style="width: 100%;">
+          </div>
+      </div>
+      <br>
+      <div class="hide" id="search-by-title-response">
+          <p>Response:</p>
+          <div class="alert alert-success" style="margin-bottom: 0px; white-space: normal; width: 250px !important;">
+            <table style="overflow-wrap: anywhere;">
+
+            </table>
+          </div>
+      </div>
+      </form>
+      <button id="search-by-last-message" type="button" class="btn-sm btn-primary">Search from last customer's message</button>
+</body>
+
+</html>
