@@ -13,19 +13,9 @@ const customerMessages = [];
       console.log("customer messages: ",customerMessages);
     };
 
-    var notifyWhenDone = function(err) {
-      if (err) {
-        console.error("Error: " + err);
-        notify.setAlertMessageRed("Error: " + err);
-      }
-      console.log("Bind Done");
-      notify.setAlertMessageRed("Data updated");
-      notify.removeAlertMsg();
-    };
-
       var pathToData = "chatTranscript.lines";
 
-      lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+      lpTag.agentSDK.bind(pathToData, updateCallback);
 
       $('#search-by-last-message').click(function () {
         var c = "t="+customerMessages[customerMessages.length - 1];
