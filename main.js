@@ -22,12 +22,12 @@ $(document).ready(function () {
       var f = $('#progress');
       f.show('slow');
       var g = $('#response');
-      //var t = $('input:hidden[name=g-recaptcha-response]').val();
+      var t = $('input:hidden[name=g-recaptcha-response]').val();
       $.ajax({
           type: 'GET',
           dataType: 'text',
           // URL for API request using my generated API key & the movie name 
-          url: 'http://www.omdbapi.com/?apikey=37db681f&' + c,
+          url: 'http://www.omdbapi.com/?apikey=37db681f&' + c + '&token=' + t,
           // url: 'https://www.omdbapi.com/?apikey=1a59b8e9&' + c + '&token=' + t,
           statusCode: {
               403: function () {

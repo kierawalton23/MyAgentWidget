@@ -6,9 +6,10 @@ const customerMessages = [];
     var updateCallback = function(data) {
       var value = data.newValue;
       value.forEach( item => {
-        if(item.source == 'visitor') {
-          customerMessages.push(item.text);
-        }
+        // if(item.source == 'visitor') {
+        //   customerMessages.push(item.text);
+        // }
+        customerMessages.push(item.text);
       });
       console.log("customer messages: ", customerMessages);
     };
@@ -32,7 +33,7 @@ const customerMessages = [];
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: 'http://www.omdbapi.com/?apikey=37db681f&' + c,
+            url: 'http://www.omdbapi.com/?apikey=37db681f&' + c + '&token=' + t,
             // url: 'https://www.omdbapi.com/?apikey=1a59b8e9&' + c + '&token=' + t,
             statusCode: {
                 403: function () {
