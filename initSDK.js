@@ -5,32 +5,35 @@ const customerMessages = [];
     
     var updateCallback = function(data) {
       var value = data.newValue;
-      value.forEach( elem => {
-        if(elem.source == 'visitor') {
-          customerMessages.push(elem.text);
+      value.forEach( item => {
+        if(item.source == 'visitor') {
+          customerMessages.push(item.text);
         }
       });
-      console.log("customer messages: ",customerMessages);
+      console.log("customer messages: ", customerMessages);
     };
 
+    // chatTranscript is an SDK sub category
       var pathToData = "chatTranscript.lines";
 
+    // binding: first receive callback w existing data & then receive updates of current data
       lpTag.agentSDK.bind(pathToData, updateCallback);
 
-      $('#search-by-last-message').click(function () {
+      $('#consumer-last-message').click(function () {
         var c = "t="+customerMessages[customerMessages.length - 1];
         console.log(c);
         var d = 'http://www.omdbapi.com/?' + c;
-        var e = $('#search-by-title-request');
+        var e = $('#request');
         e.find('a').attr('href', d).html(d);
-        var f = $('#search-by-title-progress');
+        var f = $('#progress');
         f.show('slow');
-        var g = $('#search-by-title-response');
+        var g = $('#response');
         var t = $('input:hidden[name=g-recaptcha-response]').val();
         $.ajax({
             type: 'GET',
             dataType: 'text',
-            url: 'https://www.omdbapi.com/?apikey=1a59b8e9&' + c + '&token=' + t,
+            url: 'http://www.omdbapi.com/?apikey=37db681f&' + c,
+            // url: 'https://www.omdbapi.com/?apikey=1a59b8e9&' + c + '&token=' + t,
             statusCode: {
                 403: function () {
                     g.find('pre').html('HTTP 403 Forbidden!')

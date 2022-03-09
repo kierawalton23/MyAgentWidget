@@ -5,7 +5,10 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+
+  <!-- referencing the client SDK -->
   <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
@@ -24,13 +27,9 @@
 </head>
 
 <body>
-  <!-- <div>
-    <label id="alert-label">Log:</label>
-    <textarea rows="1" id="alert" class="message-area" readonly></textarea>
-  </div> -->
   <div id="mywidget">
 
-    <form class="well form-search" id="search-by-title-form" onsubmit="return false;">
+    <form class="well form-search" id="movie-title" onsubmit="return false;">
       <fieldset>
           <legend>Search Film</legend>
       </fieldset>
@@ -38,33 +37,24 @@
           <label class="control-label" for="t">Title:</label>
           <input type="text" id="t" name="t" class="input-small">
           <br>
-          <label class="control-label" for="y">Year:</label>
-          <input type="text" id="y" name="y" class="input-small" style="width: 100px;">
-          <br>
-          <label class="control-label">Plot:</label>
-          <select name="plot" style="width: 100px;">
-              <option value="" selected="">Short</option>
-              <option value="full">Full</option>
-          </select>
-          <br>
           <label class="control-label" style="display: none;">Response:</label>
           <select name="r" style="width: 100px; display: none;">
               <option value="" selected="">JSON</option>
           </select>
-          <button id="search-by-title-button" type="button" class="btn-sm btn-primary">Search</button>
-          <button id="search-by-title-reset" type="reset" class="btn-sm">Reset</button>
+          <button id="movie-title-button" type="button" class="btn-sm btn-primary">Search</button>
+          <button id="movie-reset" type="reset" class="btn-sm">Reset</button>
       </div>
-      <div class="hide" id="search-by-title-request" style="display: none;">
+      <div class="hide" id="request" style="display: none;">
           <br>
           <p>Request:</p>
           <pre class="alert alert-box"><a href="javascript:;" target="_blank"></a></pre>
       </div>
-      <div id="search-by-title-progress" class="hide progress progress-info progress-striped active">
+      <div id="progress" class="hide progress progress-info progress-striped active">
           <div class="progress-bar" style="width: 100%;">
           </div>
       </div>
       <br>
-      <div class="hide" id="search-by-title-response">
+      <div class="hide" id="response">
           <p>Response:</p>
           <div class="alert alert-success" style="margin-bottom: 0px; white-space: normal; width: 250px !important;">
             <table style="overflow-wrap: anywhere;">
@@ -73,7 +63,7 @@
           </div>
       </div>
       </form>
-      <button id="search-by-last-message" type="button" class="btn-sm btn-primary">Search from last customer's message</button>
+      <button id="consumer-last-message" type="button" class="btn-sm btn-primary">Search from last customer's message</button>
 </body> 
 
 </html>
