@@ -1,5 +1,7 @@
 const customerMessages = [];
 
+
+// code onlyruns once DOM is ready for JS code to operate
   $(document).ready(function () {
     lpTag.agentSDK.init();
     
@@ -20,6 +22,7 @@ const customerMessages = [];
     // binding: first receive callback w existing data & then receive updates of current data
       lpTag.agentSDK.bind(pathToData, updateCallback);
 
+      // $ is short for get element by ID
       $('#consumer-last-message').click(function () {
         var c = "t="+customerMessages[customerMessages.length - 1];
         console.log(c);
