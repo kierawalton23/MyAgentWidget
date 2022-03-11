@@ -1,6 +1,6 @@
 const consumerMessage = [];
 
-// code onlyruns once DOM is ready for JS code to operate
+// code only runs once DOM is ready for JS code to operate
   $(document).ready(function () {
     lpTag.agentSDK.init();
     
