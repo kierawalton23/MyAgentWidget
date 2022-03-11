@@ -27,8 +27,8 @@ $(document).ready(function () {
           type: 'GET',
           dataType: 'text',
           // URL for API request using my generated API key & the movie name 
-          url: 'http://www.omdbapi.com/?apikey=37db681f&' + c + '&token=' + t,
-          // url: 'https://www.omdbapi.com/?apikey=1a59b8e9&' + c + '&token=' + t,
+          //url: 'http://www.omdbapi.com/?apikey=37db681f&' + c + '&token=' + t,
+          url: 'https://www.omdbapi.com/?apikey=1a59b8e9&' + c + '&token=' + t,
           statusCode: {
               403: function () {
                   g.find('pre').html('HTTP 403 Forbidden!')
