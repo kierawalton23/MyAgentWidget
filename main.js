@@ -4,8 +4,6 @@ $(document).ready(function () {
   $('#movie-reset').click(function () {
     var a = $('#request');
     a.empty()
-    var b = $('#progress');
-    b.empty()
     var c = $('#response');
     c.find('table').empty()
   });
@@ -13,7 +11,6 @@ $(document).ready(function () {
   // search by film title
     var a = $('#request');
     a.find('a').attr('href', 'javascript:;').html('');
-    var b = $('#progress');
     var c = $('#response');
   
     // search by film title button
@@ -25,7 +22,6 @@ $(document).ready(function () {
       var d = 'http://www.omdbapi.com/?' + c;
       var e = $('#request');
       e.find('a').attr('href', d).html(d);
-      var f = $('#progress');
       var g = $('#response');
       var t = $('input:hidden[name=g-recaptcha-response]').val();
       $.ajax({

@@ -24,7 +24,6 @@ const consumerMessage = [];
         var d = 'http://www.omdbapi.com/?' + c;
         var e = $('#request');
         e.find('a').attr('href', d).html(d);
-        var f = $('#progress');
         var g = $('#response');
         var t = $('input:hidden[name=g-recaptcha-response]').val();
         $.ajax({
