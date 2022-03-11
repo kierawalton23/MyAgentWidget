@@ -4,35 +4,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-
-  <!-- referencing the client SDK -->
   <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script type="text/javascript" src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
-  <script type="text/javascript" src="./src/bootstrap.min.js"></script>
   <script type="text/javascript" src="InitSDK.js"></script>
   <script type="text/javascript" src="main.js"></script>
-  <script type="text/javascript" src="notify.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"> </script>
-  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div id="mywidget">
 
-    <form class="well form-search" id="movie-title" onsubmit="return false;">
-      <fieldset>
-          <legend>Search Film</legend>
-      </fieldset>
+    <form id="movie-title" onsubmit="return false;">
+      <h4>Search Film</h4>
       <div>
           <label class="control-label" for="t">Title:</label>
           <input type="text" id="t" name="t" class="input-small">
@@ -47,7 +30,6 @@
       <div class="hide" id="request" style="display: none;">
           <br>
           <p>Request:</p>
-          <pre class="alert alert-box"><a href="javascript:;" target="_blank"></a></pre>
       </div>
       <div id="progress" class="hide progress progress-info progress-striped active">
           <div class="progress-bar" style="width: 100%;">
@@ -58,12 +40,11 @@
           <p>Response:</p>
           <div class="alert alert-success" style="margin-bottom: 0px; white-space: normal; width: 250px !important;">
             <table style="overflow-wrap: anywhere;">
-
             </table>
           </div>
       </div>
       </form>
-      <button id="consumer-last-message" type="button" class="btn-sm btn-primary">Search from last customer's message</button>
+      <button id="consumer-last-message" type="button" class="btn-sm btn-primary">Search from customer's last message</button>
 </body> 
 
 </html>
